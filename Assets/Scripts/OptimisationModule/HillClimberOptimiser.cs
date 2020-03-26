@@ -32,7 +32,7 @@ public class HillClimberOptimiser : OptimisationAlgorithm
             int newSolutionCost = Evaluate(newSolution);
 
             if (newSolutionCost <= bestCost) {
-                base.CurrentSolution = new List<int>(newSolution);
+                base.CurrentSolution = newSolution;
                 bestCost = newSolutionCost;
             }
 
