@@ -19,19 +19,26 @@ public class HillClimberOptimiser : OptimisationAlgorithm
     {
         CreateFile(fileName);
         // Initialization
-        /* *****************************************
-                        YOUR CODE HERE
-            *****************************************                      
-        */
+        this.newSolution = GenerateRandomSolution(targets.Count);
+        int quality = Evaluate(newSolution);
+        base.CurrentSolution = new List<int>(newSolution);
+        bestCost = quality;
     }
 
     protected override void Step()
     {
-    
-        /* *****************************************
-                        YOUR CODE HERE
-            *****************************************                      
-        */
+        base.CurrentSolution = GenerateRandomSolution(targets.Count);
+        int CurrentSolutionCost = Evaluate(CurrentSolution);
+        
+        while (CurrentNumberOfIterations < MaxNumberOfIterations) {
+            this.newSolution = GenerateNeighbourSolution(CurrentSolution);
+            int newSolutionCost = Evaluate(newSolution);
+
+            if (newSolutionCost <= bestCost) {
+                CurrentSolution = newSolution;
+                CurrentSolutionCost = newSolutionCost;
+            }
+        }
 
         //DO NOT CHANGE THE LINES BELLOW
         AddInfoToFile(fileName, base.CurrentNumberOfIterations, this.Evaluate(base.CurrentSolution), base.CurrentSolution);
