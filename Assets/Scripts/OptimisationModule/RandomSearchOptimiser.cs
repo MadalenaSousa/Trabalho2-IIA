@@ -32,6 +32,7 @@ public class RandomSearchOptimiser : OptimisationAlgorithm
         
         this.newSolution = GenerateRandomSolution(targets.Count);
         int cost = Evaluate(newSolution);
+        
         if (cost < bestCost)
         {
             base.CurrentSolution = new List<int>(newSolution);
