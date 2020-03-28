@@ -20,8 +20,6 @@ public class HillClimberOptimiser : OptimisationAlgorithm
         CreateFile(fileName);
         bestSequenceFound = new List<GameObject>();
 
-        print("entreiiii");
-
         // Initialization
         base.CurrentSolution = GenerateRandomSolution(targets.Count);
         int quality = Evaluate(CurrentSolution);
@@ -30,7 +28,6 @@ public class HillClimberOptimiser : OptimisationAlgorithm
 
     protected override void Step()
     {
-        
             this.newSolution = GenerateNeighbourSolution(CurrentSolution);
             int newSolutionCost = Evaluate(newSolution);
 
