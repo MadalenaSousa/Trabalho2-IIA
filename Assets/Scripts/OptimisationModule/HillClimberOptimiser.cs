@@ -22,9 +22,11 @@ public class HillClimberOptimiser : OptimisationAlgorithm
 
         // Initialization
         this.newSolution = GenerateRandomSolution(targets.Count);
-        int quality = Evaluate(CurrentSolution);
+        int quality = Evaluate(newSolution);
         base.CurrentSolution = new List<int>(newSolution);
         bestCost = quality;
+
+        print(CurrentSolution);
     }
 
     protected override void Step()
