@@ -24,7 +24,10 @@ public class RandomSearchOptimiser : OptimisationAlgorithm
         int quality = Evaluate(newSolution);
         base.CurrentSolution = new List<int>(newSolution);
         bestCost = quality;
-        
+
+        //DO NOT CHANGE THE LINES BELLOW
+        AddInfoToFile(fileName, CurrentNumberOfIterations, this.Evaluate(base.CurrentSolution), base.CurrentSolution);
+        CurrentNumberOfIterations++;
     }
 
     protected override void Step()
@@ -32,7 +35,6 @@ public class RandomSearchOptimiser : OptimisationAlgorithm
         
         this.newSolution = GenerateRandomSolution(targets.Count);
         int cost = Evaluate(newSolution);
-        
         if (cost < bestCost)
         {
             base.CurrentSolution = new List<int>(newSolution);

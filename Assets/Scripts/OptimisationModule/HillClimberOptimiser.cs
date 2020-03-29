@@ -25,6 +25,9 @@ public class HillClimberOptimiser : OptimisationAlgorithm
         int quality = Evaluate(newSolution);
         base.CurrentSolution = new List<int>(newSolution);
         bestCost = quality;
+
+        AddInfoToFile(fileName, base.CurrentNumberOfIterations, this.Evaluate(base.CurrentSolution), base.CurrentSolution);
+        base.CurrentNumberOfIterations++;
     }
 
     protected override void Step()

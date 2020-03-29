@@ -44,6 +44,7 @@ public abstract class OptimisationAlgorithm : MonoBehaviour {
     void Update() {
         if (running && !TargetSequenceDefined) {
             for (int i = 0; i < iterationsPerFrame; i++) {
+                // this is the While CurrentNumberOfIterations < MaxNumberOfIterations
                 if (CurrentNumberOfIterations < MaxNumberOfIterations) {
                     Step();
                     numberOfSteps++;

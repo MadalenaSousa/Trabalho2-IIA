@@ -16,14 +16,24 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
     {
         CreateFileSA(fileName);
         // Initialization
-        
-        //YOUR CODE HERE
+
+        /* *****************************************
+                        YOUR CODE HERE
+            *****************************************                      
+        */
+
+        //DO NOT CHANGE THE LINES BELLOW
+        AddInfoToFile(fileName, base.CurrentNumberOfIterations, CurrentSolutionCost, CurrentSolution, Temperature);
+        base.CurrentNumberOfIterations++;
     }
 
     protected override void Step()
     {
 
-        //YOUR CODE HERE
+        /* *****************************************
+                        YOUR CODE HERE
+            *****************************************                      
+        */
 
         //DO NOT CHANGE THE LINES BELLOW
         AddInfoToFile(fileName, base.CurrentNumberOfIterations, CurrentSolutionCost, CurrentSolution, Temperature);
