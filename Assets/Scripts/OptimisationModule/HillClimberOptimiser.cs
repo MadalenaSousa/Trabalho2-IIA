@@ -21,8 +21,9 @@ public class HillClimberOptimiser : OptimisationAlgorithm
         bestSequenceFound = new List<GameObject>();
 
         // Initialization
-        base.CurrentSolution = GenerateRandomSolution(targets.Count);
+        this.newSolution = GenerateRandomSolution(targets.Count);
         int quality = Evaluate(CurrentSolution);
+        base.CurrentSolution = new List<int>(newSolution);
         bestCost = quality;
     }
 
@@ -32,7 +33,7 @@ public class HillClimberOptimiser : OptimisationAlgorithm
             int newSolutionCost = Evaluate(newSolution);
 
             if (newSolutionCost <= bestCost) {
-                base.CurrentSolution = newSolution;
+                base.CurrentSolution = new List<int>(newSolution);
                 bestCost = newSolutionCost;
             }
 
