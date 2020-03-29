@@ -23,6 +23,9 @@ public class HillClimberOptimiser : OptimisationAlgorithm
                         YOUR CODE HERE
             *****************************************                      
         */
+        //DO NOT CHANGE THE LINES BELLOW
+        AddInfoToFile(fileName, base.CurrentNumberOfIterations, this.Evaluate(base.CurrentSolution), base.CurrentSolution);
+        base.CurrentNumberOfIterations++;
     }
 
     protected override void Step()

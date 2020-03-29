@@ -20,6 +20,10 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
                         YOUR CODE HERE
             *****************************************                      
         */
+
+        //DO NOT CHANGE THE LINES BELLOW
+        AddInfoToFile(fileName, base.CurrentNumberOfIterations, CurrentSolutionCost, CurrentSolution, Temperature);
+        base.CurrentNumberOfIterations++;
     }
 
     protected override void Step()
