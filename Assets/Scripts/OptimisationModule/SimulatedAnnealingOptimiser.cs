@@ -16,19 +16,25 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
     {
         CreateFileSA(fileName);
         // Initialization
-        /* *****************************************
-                        YOUR CODE HERE
-            *****************************************                      
-        */
+        this.newSolution = GenerateRandomSolution(targets.Count);
+        this.Temperature = zero;
+        this.CurrentSolutionCost = Evaluate(newSolution);
+        base.CurrentSolution = new List<int>(newSolution);
     }
 
     protected override void Step()
     {
 
-        /* *****************************************
-                        YOUR CODE HERE
-            *****************************************                      
-        */
+        this.newSolution = GenerateNeighbourSolution(CurrentSolution);
+        int newSolutionCost = Evaluate(newSolution);
+
+        //float probability = Mathf.Pow((float)Math.E, (CurrentSolutionCost - newSolutionCost)/Temperature);
+
+        if (newSolutionCost <= CurrentSolutionCost)
+        {
+            base.CurrentSolution = new List<int>(newSolution);
+            CurrentSolutionCost = newSolutionCost;
+        }
 
         //DO NOT CHANGE THE LINES BELLOW
         AddInfoToFile(fileName, base.CurrentNumberOfIterations, CurrentSolutionCost, CurrentSolution, Temperature);

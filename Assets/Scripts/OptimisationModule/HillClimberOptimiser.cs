@@ -25,8 +25,6 @@ public class HillClimberOptimiser : OptimisationAlgorithm
         int quality = Evaluate(newSolution);
         base.CurrentSolution = new List<int>(newSolution);
         bestCost = quality;
-
-        print(CurrentSolution);
     }
 
     protected override void Step()
