@@ -18,30 +18,32 @@ public class HillClimberOptimiser : OptimisationAlgorithm
     protected override void Begin()
     {
         CreateFile(fileName);
+        bestSequenceFound = new List<GameObject>();
+
         // Initialization
-        /* *****************************************
-                        YOUR CODE HERE
-            *****************************************                      
-        */
-        //DO NOT CHANGE THE LINES BELLOW
+        this.newSolution = GenerateRandomSolution(targets.Count);
+        int quality = Evaluate(newSolution);
+        base.CurrentSolution = new List<int>(newSolution);
+        bestCost = quality;
+
         AddInfoToFile(fileName, base.CurrentNumberOfIterations, this.Evaluate(base.CurrentSolution), base.CurrentSolution);
         base.CurrentNumberOfIterations++;
     }
 
     protected override void Step()
     {
-    
-        /* *****************************************
-                        YOUR CODE HERE
-            *****************************************                      
-        */
+            this.newSolution = GenerateNeighbourSolution(CurrentSolution);
+            int newSolutionCost = Evaluate(newSolution);
+
+            if (newSolutionCost <= bestCost) {
+                base.CurrentSolution = new List<int>(newSolution);
+                bestCost = newSolutionCost;
+            }
 
         //DO NOT CHANGE THE LINES BELLOW
         AddInfoToFile(fileName, base.CurrentNumberOfIterations, this.Evaluate(base.CurrentSolution), base.CurrentSolution);
         base.CurrentNumberOfIterations++;
-
+        
     }
-
-   
 
 }

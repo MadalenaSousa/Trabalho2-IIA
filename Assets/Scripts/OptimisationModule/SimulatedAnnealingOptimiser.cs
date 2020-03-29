@@ -16,6 +16,7 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
     {
         CreateFileSA(fileName);
         // Initialization
+
         /* *****************************************
                         YOUR CODE HERE
             *****************************************                      
