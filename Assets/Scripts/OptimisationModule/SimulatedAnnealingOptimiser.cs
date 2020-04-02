@@ -7,6 +7,7 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
     private List<int> newSolution = null;
     private int CurrentSolutionCost;
     public float Temperature;
+    public float maxTemperature;
     private float zero = Mathf.Pow(10, -6);// numbers bellow this value can be considered zero.
 
     string fileName = "Assets/Logs/" + System.DateTime.Now.ToString("ddhmmsstt") + "_SimulatedAnnealingOptimiser.csv";
@@ -20,7 +21,7 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
         int quality = Evaluate(newSolution);
         base.CurrentSolution = new List<int>(newSolution);
         CurrentSolutionCost = quality;
-        Temperature = zero;
+        Temperature = maxTemperature;
 
         //DO NOT CHANGE THE LINES BELLOW
         AddInfoToFile(fileName, base.CurrentNumberOfIterations, CurrentSolutionCost, CurrentSolution, Temperature);
@@ -36,7 +37,7 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
 
             float probability = Mathf.Exp((CurrentSolutionCost - newSolutionCost)/Temperature);
 
-            if (newSolutionCost <= CurrentSolutionCost || probability > 1)
+            if (newSolutionCost <= CurrentSolutionCost || probability > Random.Range(0f, 1f))
             {
                 base.CurrentSolution = new List<int>(newSolution);
                 CurrentSolutionCost = newSolutionCost;
