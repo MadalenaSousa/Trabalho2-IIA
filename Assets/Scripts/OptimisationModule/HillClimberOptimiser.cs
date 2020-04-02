@@ -26,6 +26,7 @@ public class HillClimberOptimiser : OptimisationAlgorithm
         base.CurrentSolution = new List<int>(newSolution);
         bestCost = quality;
 
+        //DO NOT CHANGE THE LINES BELLOW
         AddInfoToFile(fileName, base.CurrentNumberOfIterations, this.Evaluate(base.CurrentSolution), base.CurrentSolution);
         base.CurrentNumberOfIterations++;
     }
