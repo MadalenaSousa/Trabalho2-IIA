@@ -35,9 +35,9 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
             this.newSolution = GenerateNeighbourSolution(CurrentSolution);
             int newSolutionCost = Evaluate(newSolution);
 
-            float probability = Mathf.Exp((CurrentSolutionCost - newSolutionCost)/Temperature);
+            float probability = Mathf.Exp((CurrentSolutionCost - newSolutionCost)/Temperature); 
 
-            if (newSolutionCost <= CurrentSolutionCost || probability > Random.Range(0f, 1f))
+            if (newSolutionCost <= CurrentSolutionCost || probability > Random.Range(0f, 1f)) 
             {
                 base.CurrentSolution = new List<int>(newSolution);
                 CurrentSolutionCost = newSolutionCost;
@@ -54,7 +54,9 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
 
     protected float TemperatureSchedule(float temperature)
     {
-        return temperature;
+        float newTemperature = temperature - 1;
+        
+        return newTemperature;
     }
 
 
