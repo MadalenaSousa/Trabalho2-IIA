@@ -16,11 +16,11 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
     {
         CreateFileSA(fileName);
         // Initialization
-
-        /* *****************************************
-                        YOUR CODE HERE
-            *****************************************                      
-        */
+        this.newSolution = GenerateRandomSolution(targets.Count);
+        int quality = Evaluate(newSolution);
+        base.CurrentSolution = new List<int>(newSolution);
+        CurrentSolutionCost = quality;
+        Temperature = zero;
 
         //DO NOT CHANGE THE LINES BELLOW
         AddInfoToFile(fileName, base.CurrentNumberOfIterations, CurrentSolutionCost, CurrentSolution, Temperature);
@@ -29,16 +29,31 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
 
     protected override void Step()
     {
+        if (Temperature > 0) {
 
-        /* *****************************************
-                        YOUR CODE HERE
-            *****************************************                      
-        */
+            this.newSolution = GenerateNeighbourSolution(CurrentSolution);
+            int newSolutionCost = Evaluate(newSolution);
 
-        //DO NOT CHANGE THE LINES BELLOW
-        AddInfoToFile(fileName, base.CurrentNumberOfIterations, CurrentSolutionCost, CurrentSolution, Temperature);
-        base.CurrentNumberOfIterations++;
+            float probability = Mathf.Exp((CurrentSolutionCost - newSolutionCost)/Temperature);
 
+            if (newSolutionCost <= CurrentSolutionCost || probability > 1)
+            {
+                base.CurrentSolution = new List<int>(newSolution);
+                CurrentSolutionCost = newSolutionCost;
+            }
+
+            Temperature = TemperatureSchedule(Temperature);
+
+            //DO NOT CHANGE THE LINES BELLOW
+            AddInfoToFile(fileName, base.CurrentNumberOfIterations, CurrentSolutionCost, CurrentSolution, Temperature);
+            base.CurrentNumberOfIterations++;
+        }
+
+    }
+
+    protected float TemperatureSchedule(float temperature)
+    {
+        return temperature;
     }
 
 
