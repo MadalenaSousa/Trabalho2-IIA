@@ -172,7 +172,7 @@ public abstract class OptimisationAlgorithm : MonoBehaviour {
         }
         temp += solution[solution.Count - 1] + 1;
         string content = iteration + "," + quality + "," + temp +"\n";
-        Debug.Log(content);
+        //Debug.Log(content);
         File.AppendAllText(fileName, content);
     }
 
