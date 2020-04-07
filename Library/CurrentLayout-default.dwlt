@@ -112,10 +112,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 678, y: 492}
-  m_MaxSize: {x: 14001, y: 14042}
+  m_MinSize: {x: 679, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 365
+  controlID: 16
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 406
+  controlID: 107
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 407
+  controlID: 108
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -391,9 +391,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 183e0000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: d838ffff0a58ffff9861ffff5c62ffff666bffffae80ffff4abdffffe4f9ffff72fbffffac360000
+      m_ExpandedIDs: 4273ffff1a74ffffb074ffffe675ffffc076ffffb077ffff7478ffff1a79ffffc679ffff309dffff4abfffff4ecaffffeee6ffffc0f5ffffcaf6ffff8cf7ffff64f8ffff00f9ffffecf9ffff72fbffffc23600008a37000014380000943800002c39000098390000a43a00002a3e00001c40000070420000a44400000245000076450000fe4500007c4600001447000080470000f447000052480000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -597,11 +597,11 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Logs
+    - Assets/_Scenes/Optimization
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Logs
+  - Assets/_Scenes/Optimization
   m_LastFoldersGridSize: -1
   m_LastProjectPath: "C:\\Users\\Madalena\\Documents\\LDM\\3\xBAAno\\2\xBASemestre\\Introdu\xE7\xE3o
     \xE0 Intelig\xEAncia Artificial\\Trabalho Pr\xE1tico 2\\Trabalho2-IIA"
@@ -609,23 +609,23 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d0340000
-    m_LastClickedID: 13520
+    m_SelectedIDs: c4340000
+    m_LastClickedID: 13508
     m_ExpandedIDs: 00000000b8340000ba340000bc340000be340000c034000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Logs
-      m_OriginalName: Logs
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 13520
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
@@ -639,7 +639,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b8340000ba340000bc340000be340000c034000000ca9a3b
+    m_ExpandedIDs: 00000000b8340000ba340000bc340000be340000c0340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
