@@ -13,8 +13,6 @@ public abstract class OptimisationAlgorithm : MonoBehaviour {
     public int CurrentNumberOfIterations = 0;
     public int iterationsPerFrame = 100;
     public int randomSeed = 2020;
-    public float startTime;
-    public float timeElapsed = 0.0f;
 
     protected Node startNode = null;
     protected int numberOfSteps = 0;
@@ -36,8 +34,6 @@ public abstract class OptimisationAlgorithm : MonoBehaviour {
         numberOfSteps = 0;
         targets = GetAllTargets();
         information = "";
-        this.startTime = Time.time;
-        timeElapsed = Time.time - startTime;
         Random.InitState(randomSeed);
         Debug.Log("starting with random-seed:" + randomSeed);
         Begin();
@@ -51,7 +47,6 @@ public abstract class OptimisationAlgorithm : MonoBehaviour {
             for (int i = 0; i < iterationsPerFrame; i++) {
                 // this is the While CurrentNumberOfIterations < MaxNumberOfIterations
                 if (CurrentNumberOfIterations < MaxNumberOfIterations) {
-                    this.timeElapsed = Time.time - this.startTime;
                     Step();
                     numberOfSteps++;
                 } else {

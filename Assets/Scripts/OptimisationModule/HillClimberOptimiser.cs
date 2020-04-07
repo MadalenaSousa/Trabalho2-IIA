@@ -11,14 +11,14 @@ public class HillClimberOptimiser : OptimisationAlgorithm
     private int bestCost;
     private List<int> newSolution = null;
     
-
     string fileName = "Assets/Logs/" + System.DateTime.Now.ToString("ddhmmsstt") + "_HillClimberOptimiser.csv";
-    string neighbourFile = "Assets/Logs/" + System.DateTime.Now.ToString("ddhmmsstt") + "neighbourSolution.csv";
+    //string neighbourFile = "Assets/Logs/" + System.DateTime.Now.ToString("ddhmmsstt") + "neighbourSolution.csv";
 
 
     protected override void Begin()
     {
         CreateFile(fileName);
+        //CreateFile(neighbourFile);
         bestSequenceFound = new List<GameObject>();
 
         // Initialization
@@ -28,15 +28,7 @@ public class HillClimberOptimiser : OptimisationAlgorithm
         bestCost = quality;
 
         //------------ LOG DA HIPÓTESE RANDOM INICIAL GERADA + CUSTO + ITERAÇÃO ----------------
-        string temp = "";
-        for (int i = 0; i < this.newSolution.Count - 1; i++)
-        {
-            temp += (this.newSolution[i] + 1) + " ";
-        }
-        temp += this.newSolution[this.newSolution.Count - 1] + 1;
-        string sequencia = this.CurrentNumberOfIterations + "," + bestCost + "," + temp + "\n";
-        Debug.Log(sequencia);
-        AddInfoToFile(neighbourFile, this.CurrentNumberOfIterations, this.Evaluate(this.newSolution), this.newSolution);
+        //AddInfoToFile(neighbourFile, this.CurrentNumberOfIterations, this.Evaluate(this.newSolution), this.newSolution);
         //--------------------------------------------------------------------------------------
 
         //DO NOT CHANGE THE LINES BELLOW
@@ -50,15 +42,7 @@ public class HillClimberOptimiser : OptimisationAlgorithm
         int newSolutionCost = Evaluate(newSolution);
 
         //----------------- LOG DAS HIPÓTESES VIZINHAS GERADAS + CUSTO + ITERAÇÃO --------------------
-        string temp = "";
-        for (int i = 0; i < this.newSolution.Count - 1; i++)
-        {
-            temp += (this.newSolution[i] + 1) + " ";
-        }
-        temp += this.newSolution[this.newSolution.Count - 1] + 1;
-        string sequencia = this.CurrentNumberOfIterations + "," + newSolutionCost + "," + temp + "\n";
-        Debug.Log(sequencia);
-        AddInfoToFile(neighbourFile, this.CurrentNumberOfIterations, this.Evaluate(this.newSolution), this.newSolution);
+        //AddInfoToFile(neighbourFile, this.CurrentNumberOfIterations, this.Evaluate(this.newSolution), this.newSolution);
         //--------------------------------------------------------------------------------------------
 
         if (newSolutionCost <= bestCost) {

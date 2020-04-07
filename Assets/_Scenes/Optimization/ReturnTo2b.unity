@@ -985,12 +985,12 @@ PrefabInstance:
     - target: {fileID: 199664548231404243, guid: b606527f8af28664a894844f3f526637,
         type: 3}
       propertyPath: MaxNumberOfIterations
-      value: 60
+      value: 105
       objectReference: {fileID: 0}
     - target: {fileID: 199664548231404243, guid: b606527f8af28664a894844f3f526637,
         type: 3}
       propertyPath: randomSeed
-      value: 100
+      value: 2020
       objectReference: {fileID: 0}
     - target: {fileID: 918055334186263890, guid: b606527f8af28664a894844f3f526637,
         type: 3}
