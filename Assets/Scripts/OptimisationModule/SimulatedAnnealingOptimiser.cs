@@ -6,8 +6,9 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
 {
     private List<int> newSolution = null;
     private int CurrentSolutionCost;
-    public float Temperature;
+    private float Temperature;
     public float maxTemperature;
+    public string functionType;
     private float zero = Mathf.Pow(10, -6);// numbers bellow this value can be considered zero.
 
     string fileName = "Assets/Logs/" + System.DateTime.Now.ToString("ddhmmsstt") + "_SimulatedAnnealingOptimiser.csv";
@@ -43,7 +44,7 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
                 CurrentSolutionCost = newSolutionCost;
             }
 
-            Temperature = TemperatureSchedule(Temperature);
+            Temperature = TemperatureSchedule(Temperature, functionType);
 
             //DO NOT CHANGE THE LINES BELLOW
             AddInfoToFile(fileName, base.CurrentNumberOfIterations, CurrentSolutionCost, CurrentSolution, Temperature);
@@ -52,11 +53,19 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
 
     }
 
-    protected float TemperatureSchedule(float temperature)
+    protected float TemperatureSchedule(float temperature, string functionType)
     {
-        float newTemperature = temperature - 1;
+        float newTemperature;
         
-        return newTemperature;
+        if(functionType == "linear")
+        {
+            newTemperature = temperature - 1;
+
+            return newTemperature;
+        } else
+        {
+            return temperature;
+        }
     }
 
 

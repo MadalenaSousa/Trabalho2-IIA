@@ -631,6 +631,10 @@ PrefabInstance:
       propertyPath: stepsPerFrame
       value: 1000000
       objectReference: {fileID: 0}
+    - target: {fileID: 997843297, guid: b606527f8af28664a894844f3f526637, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 997843298, guid: b606527f8af28664a894844f3f526637, type: 3}
       propertyPath: debugPath
       value: 1
@@ -650,7 +654,17 @@ PrefabInstance:
     - target: {fileID: 199664548231404243, guid: b606527f8af28664a894844f3f526637,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 199664548231404243, guid: b606527f8af28664a894844f3f526637,
+        type: 3}
+      propertyPath: MaxNumberOfIterations
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 199664548231404243, guid: b606527f8af28664a894844f3f526637,
+        type: 3}
+      propertyPath: randomSeed
+      value: 2020
       objectReference: {fileID: 0}
     - target: {fileID: 918055334186263890, guid: b606527f8af28664a894844f3f526637,
         type: 3}
@@ -670,11 +684,26 @@ PrefabInstance:
     - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
         type: 3}
       propertyPath: maxTemperature
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
+        type: 3}
+      propertyPath: functionType
+      value: linear
+      objectReference: {fileID: 0}
+    - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
+        type: 3}
+      propertyPath: Temperature
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
+        type: 3}
+      propertyPath: MaxNumberOfIterations
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4098859518129120615, guid: b606527f8af28664a894844f3f526637,

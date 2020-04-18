@@ -42,6 +42,7 @@ public abstract class OptimisationAlgorithm : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        
         if (running && !TargetSequenceDefined) {
             for (int i = 0; i < iterationsPerFrame; i++) {
                 // this is the While CurrentNumberOfIterations < MaxNumberOfIterations
@@ -166,7 +167,7 @@ public abstract class OptimisationAlgorithm : MonoBehaviour {
         }
         temp += solution[solution.Count - 1] + 1;
         string content = iteration + "," + quality + "," + temp +"\n";
-        Debug.Log(content);
+        //Debug.Log(content);
         File.AppendAllText(fileName, content);
     }
 
