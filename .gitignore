@@ -2271,6 +2271,15 @@ Library/ShaderCache/e/e90ddbe12dd2f412c53f197b0ca59d11.bin
 Library/ShaderCache/e/eb53529a1640bf5834c9c174d16f973b.bin
 Temp/UnityLockfile
 .vs/
+
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
 # Gradle cache directory
 .gradle/
 
