@@ -33,7 +33,7 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
 
     protected override void Step()
     {
-        if (Temperature > 0) {
+        if (Temperature > zero) {
 
             this.newSolution = GenerateNeighbourSolution(CurrentSolution);
             int newSolutionCost = Evaluate(newSolution);
