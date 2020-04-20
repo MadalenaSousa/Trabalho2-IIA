@@ -45,7 +45,7 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
                 base.CurrentSolution = new List<int>(newSolution);
                 CurrentSolutionCost = newSolutionCost;
             }
-
+           
             Temperature = TemperatureSchedule(Temperature, functionType, maxTemperature, sigDeclive, sigAvancoX);
 
             //DO NOT CHANGE THE LINES BELLOW
