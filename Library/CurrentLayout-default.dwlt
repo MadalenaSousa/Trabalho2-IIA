@@ -185,8 +185,8 @@ MonoBehaviour:
     y: 0
     width: 403
     height: 505
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -266,8 +266,8 @@ MonoBehaviour:
     y: 0
     width: 553
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -393,7 +393,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 34e5ffffe8e5ffff7ee6ffff2af9ffff72fbffffc03700003838000096380000
+      m_ExpandedIDs: 72fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -597,11 +597,11 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Logs
+    - Assets/Scripts/OptimisationModule
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Logs
+  - Assets/Scripts/OptimisationModule
   m_LastFoldersGridSize: -1
   m_LastProjectPath: "C:\\Users\\Madalena\\Documents\\LDM\\3\xBAAno\\2\xBASemestre\\Introdu\xE7\xE3o
     \xE0 Intelig\xEAncia Artificial\\Trabalho Pr\xE1tico 2\\Trabalho2-IIA"
@@ -609,9 +609,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d0340000
-    m_LastClickedID: 13520
-    m_ExpandedIDs: 00000000b8340000ba340000bc340000be340000c034000000ca9a3b
+    m_SelectedIDs: bc340000
+    m_LastClickedID: 13500
+    m_ExpandedIDs: 0000000096340000983400009a3400009c3400009e34000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -639,7 +639,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b8340000ba340000bc340000be340000c0340000
+    m_ExpandedIDs: 0000000096340000983400009a3400009c3400009e340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
