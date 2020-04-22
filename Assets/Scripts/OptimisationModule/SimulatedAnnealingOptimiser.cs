@@ -61,7 +61,7 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
 
         if (functionType == "linear")
         {
-            return temperature;
+            return newTemperature;
         }
         else if(functionType == "sigmoid")
         {
@@ -71,7 +71,7 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
         }
         else
         {
-            return temperature;
+            return newTemperature;
         }
     }
 
