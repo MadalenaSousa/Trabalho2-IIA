@@ -57,7 +57,7 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
 
     protected float TemperatureSchedule(float temperature, string functionType, float maxTemp, float declive, float avancoX)
     {
-        float newTemperature = temperature - 1;
+        float newTemperature = temperature - 1; //Quanto devemos descer por iteração? 
 
         if (functionType == "linear")
         {
