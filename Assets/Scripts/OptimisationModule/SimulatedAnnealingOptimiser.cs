@@ -13,9 +13,6 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
 
     string fileName = "Assets/Logs/" + System.DateTime.Now.ToString("ddhmmsstt") + "_SimulatedAnnealingOptimiser.csv";
 
-    public float sigDeclive, sigAvancoX;
-
-
     protected override void Begin()
     {
         CreateFileSA(fileName);
@@ -46,7 +43,7 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
                 CurrentSolutionCost = newSolutionCost;
             }
            
-            Temperature = TemperatureSchedule(Temperature, functionType, maxTemperature, sigDeclive, sigAvancoX);
+            Temperature = TemperatureSchedule(Temperature, functionType);
 
             //DO NOT CHANGE THE LINES BELLOW
             AddInfoToFile(fileName, base.CurrentNumberOfIterations, CurrentSolutionCost, CurrentSolution, Temperature);
@@ -55,23 +52,23 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
 
     }
 
-    protected float TemperatureSchedule(float temperature, string functionType, float maxTemp, float declive, float avancoX)
+    protected float TemperatureSchedule(float temperature, string functionType)
     {
-        float newTemperature = temperature - 1; //Quanto devemos descer por iteração? 
-
         if (functionType == "linear")
         {
-            return newTemperature;
+            return temperature;
         }
-        else if(functionType == "sigmoid")
+        else if(functionType == "logaritmic")
         {
-            float sigTemperature = maxTemp / (1 + Mathf.Exp(-declive * newTemperature + avancoX));
-
-            return sigTemperature;
+            return temperature;
+        }
+        else if(functionType == "sinusoid")
+        {
+            return temperature;
         }
         else
         {
-            return newTemperature;
+            return temperature;
         }
     }
 
