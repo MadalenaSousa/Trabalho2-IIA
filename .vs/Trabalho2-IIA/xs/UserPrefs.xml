@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{B7EDBC5E-8279-E229-C3A2-D67D809E8F3D}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/OptimisationModule/SimulatedAnnealingOptimiser.cs">
+    <Files>
+      <File FileName="Assets/Scripts/OptimisationModule/SimulatedAnnealingOptimiser.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Trabalho2-IIA" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="OptimisationModule" expanded="True">
+                  <Node name="SimulatedAnnealingOptimiser.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="159c00d7-d5a2-46c1-a4e3-f9e0b8061dad" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
