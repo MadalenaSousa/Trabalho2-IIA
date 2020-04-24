@@ -13,6 +13,8 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
 
     string fileName = "Assets/Logs/" + System.DateTime.Now.ToString("ddhmmsstt") + "_SimulatedAnnealingOptimiser.csv";
 
+    public float expDecrescimo, logDecrescimo, linDecrescimo;
+
     protected override void Begin()
     {
         CreateFileSA(fileName);
@@ -43,7 +45,7 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
                 CurrentSolutionCost = newSolutionCost;
             }
            
-            Temperature = TemperatureSchedule(Temperature, functionType);
+            Temperature = TemperatureSchedule(Temperature, functionType, expDecrescimo, logDecrescimo, linDecrescimo);
 
             //DO NOT CHANGE THE LINES BELLOW
             AddInfoToFile(fileName, base.CurrentNumberOfIterations, CurrentSolutionCost, CurrentSolution, Temperature);
@@ -52,19 +54,25 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
 
     }
 
-    protected float TemperatureSchedule(float temperature, string functionType)
+    protected float TemperatureSchedule(float temperature, string functionType, float expDecrescimo, float logDecrescimo, float linDecrescimo)
     {
         if (functionType == "linear")
         {
-            return temperature;
+            float linTemperature = temperature - linDecrescimo;
+            
+            return linTemperature;
         }
         else if(functionType == "logaritmic")
         {
-            return temperature;
+            float logTemperature = temperature;
+
+            return logTemperature;
         }
-        else if(functionType == "sinusoid")
+        else if(functionType == "exponential")
         {
-            return temperature;
+            float expTemperature = temperature * expDecrescimo;
+
+            return expTemperature;
         }
         else
         {
