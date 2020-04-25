@@ -45,7 +45,7 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
                 CurrentSolutionCost = newSolutionCost;
             }
            
-            Temperature = TemperatureSchedule(Temperature, functionType, expDecrescimo, logDecrescimo, linDecrescimo);
+            Temperature = TemperatureSchedule(Temperature, functionType, base.CurrentNumberOfIterations, expDecrescimo, logDecrescimo, linDecrescimo);
 
             //DO NOT CHANGE THE LINES BELLOW
             AddInfoToFile(fileName, base.CurrentNumberOfIterations, CurrentSolutionCost, CurrentSolution, Temperature);
@@ -54,7 +54,7 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
 
     }
 
-    protected float TemperatureSchedule(float temperature, string functionType, float expDecrescimo, float logDecrescimo, float linDecrescimo)
+    protected float TemperatureSchedule(float temperature, string functionType, float index, float expDecrescimo, float logDecrescimo, float linDecrescimo)
     {
         if (functionType == "linear")
         {
@@ -64,7 +64,7 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
         }
         else if(functionType == "logaritmic")
         {
-            float logTemperature = temperature;
+            float logTemperature = temperature - 1/(index * Mathf.Log(Mathf.Exp(1), 10) + Mathf.Log(Mathf.Exp(1), 10));
 
             return logTemperature;
         }
