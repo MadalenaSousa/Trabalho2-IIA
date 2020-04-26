@@ -13,7 +13,7 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
 
     string fileName = "Assets/Logs/" + System.DateTime.Now.ToString("ddhmmsstt") + "_SimulatedAnnealingOptimiser.csv";
 
-    public float expDecrescimo, logDecrescimo, linDecrescimo;
+    public float expDecrescimo, linDecrescimo;
 
     protected override void Begin()
     {
@@ -45,7 +45,7 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
                 CurrentSolutionCost = newSolutionCost;
             }
            
-            Temperature = TemperatureSchedule(Temperature, functionType, base.CurrentNumberOfIterations, expDecrescimo, logDecrescimo, linDecrescimo);
+            Temperature = TemperatureSchedule(Temperature, functionType, base.CurrentNumberOfIterations, expDecrescimo, linDecrescimo);
 
             //DO NOT CHANGE THE LINES BELLOW
             AddInfoToFile(fileName, base.CurrentNumberOfIterations, CurrentSolutionCost, CurrentSolution, Temperature);
@@ -54,7 +54,7 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
 
     }
 
-    protected float TemperatureSchedule(float temperature, string functionType, float index, float expDecrescimo, float logDecrescimo, float linDecrescimo)
+    protected float TemperatureSchedule(float temperature, string functionType, float index, float expDecrescimo, float linDecrescimo)
     {
         if (functionType == "linear")
         {
@@ -64,7 +64,7 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
         }
         else if(functionType == "logaritmic")
         {
-            float logTemperature = temperature - 1/(index * Mathf.Log(Mathf.Exp(1), 10) + Mathf.Log(Mathf.Exp(1), 10));
+            float logTemperature = temperature - (1/((index * Mathf.Log(Mathf.Exp(1), 2)) + (Mathf.Log(Mathf.Exp(1), 2))));
 
             return logTemperature;
         }
