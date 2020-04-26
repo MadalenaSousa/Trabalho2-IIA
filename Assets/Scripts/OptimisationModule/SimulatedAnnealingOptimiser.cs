@@ -37,15 +37,15 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
             this.newSolution = GenerateNeighbourSolution(CurrentSolution);
             int newSolutionCost = Evaluate(newSolution);
 
-            float probability = Mathf.Exp((CurrentSolutionCost - newSolutionCost)/Temperature); 
+            float probability = Mathf.Exp((CurrentSolutionCost - newSolutionCost)/Temperature); //probabilidade de aceitar uma solução que não é melhor que a atual, depende do quaão má é a nova solução e da temperatura atual
 
-            if (newSolutionCost <= CurrentSolutionCost || probability > Random.Range(0f, 1f)) 
+            if (newSolutionCost <= CurrentSolutionCost || probability > Random.Range(0f, 1f))  //entra caso a nova solução seja melhor que a atual ou caso a probabilidade seja maior que um número random entre 0 e 1
             {
                 base.CurrentSolution = new List<int>(newSolution);
                 CurrentSolutionCost = newSolutionCost;
             }
            
-            Temperature = TemperatureSchedule(Temperature, functionType, base.CurrentNumberOfIterations, expDecrescimo, linDecrescimo);
+            Temperature = TemperatureSchedule(Temperature, functionType, base.CurrentNumberOfIterations, expDecrescimo, linDecrescimo); //atualiza a temperatura
 
             //DO NOT CHANGE THE LINES BELLOW
             AddInfoToFile(fileName, base.CurrentNumberOfIterations, CurrentSolutionCost, CurrentSolution, Temperature);
