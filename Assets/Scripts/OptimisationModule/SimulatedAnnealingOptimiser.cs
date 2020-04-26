@@ -64,7 +64,7 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
         }
         else if(functionType == "logaritmic")
         {
-            float logTemperature = temperature - (1/((index * Mathf.Log(Mathf.Exp(1), 2)) + (Mathf.Log(Mathf.Exp(1), 2))));
+            float logTemperature = temperature - (1.0f/(((float)index * Mathf.Log(2)) + (Mathf.Log(2))));
 
             return logTemperature;
         }
