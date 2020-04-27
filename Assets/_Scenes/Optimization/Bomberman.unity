@@ -1015,7 +1015,7 @@ PrefabInstance:
     - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
         type: 3}
       propertyPath: linDecrescimo
-      value: 1
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
         type: 3}
@@ -1025,12 +1025,12 @@ PrefabInstance:
     - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
         type: 3}
       propertyPath: randomSeed
-      value: 5000
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
         type: 3}
       propertyPath: MaxNumberOfIterations
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
         type: 3}

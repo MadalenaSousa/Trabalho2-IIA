@@ -1072,22 +1072,27 @@ PrefabInstance:
     - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
         type: 3}
       propertyPath: linDecrescimo
-      value: 0.01
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
         type: 3}
       propertyPath: maxTemperature
-      value: 20
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
         type: 3}
       propertyPath: randomSeed
-      value: 1000
+      value: 25000
       objectReference: {fileID: 0}
     - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
         type: 3}
       propertyPath: MaxNumberOfIterations
-      value: 2000
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
+        type: 3}
+      propertyPath: functionType
+      value: linear
       objectReference: {fileID: 0}
     - target: {fileID: 4098859518129120615, guid: b606527f8af28664a894844f3f526637,
         type: 3}
