@@ -45,7 +45,7 @@ public class HillClimberOptimiser : OptimisationAlgorithm
         //AddInfoToFile(neighbourFile, this.CurrentNumberOfIterations, this.Evaluate(this.newSolution), this.newSolution);
         //--------------------------------------------------------------------------------------------
 
-        if (newSolutionCost <= bestCost) {
+        if (newSolutionCost <= bestCost) { //caso a nova solução vizinha seja melhor que a atual, aceita
             base.CurrentSolution = new List<int>(newSolution);
             bestCost = newSolutionCost;
         }
